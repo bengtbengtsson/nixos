@@ -12,7 +12,7 @@
 
   # Define LUKS encryption for the root partition
   boot.initrd.luks.devices.cryptroot = {
-    device = lib.mkForce "/dev/disk/by-uuid/8b09c85b-ea88-4b7b-8aff-9cb465562d3c";
+    device = lib.mkForce "/dev/disk/by-partlabel/cryptic";
     preLVM = true;
   }; 
 
@@ -21,10 +21,13 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Mount the root filesystem
-  fileSystems."/".device = "/dev/disk/by-uuid/d7fbb264-209f-4f25-b5eb-82d9c11831fb";
+  fileSystems."/".device = "/dev/disk/by-label/nixos";
 
   # Specify the boot partition
-  fileSystems."/boot".device = "/dev/disk/by-uuid/65A2-06BF";
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-label/boot";
+    fsType = "vfat";
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -79,6 +82,8 @@
     dwm
     st
     dmenu
+    chromium
+    parted
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -124,4 +129,3 @@
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
   system.stateVersion = "24.05"; # Did you read the comment?
 }
-
