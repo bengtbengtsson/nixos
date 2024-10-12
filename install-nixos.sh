@@ -73,9 +73,6 @@ curl -L https://raw.githubusercontent.com/bengtbengtsson/nixos/main/hardware-con
 echo "Installing NixOS..."
 nixos-install
 
-# Set password to user ben
-passwd ben
-
 # Create .xinitrc for ben
 echo "exec dwm" >> /mnt/home/ben/.xinitrc
 
