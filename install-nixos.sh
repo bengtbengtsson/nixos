@@ -26,6 +26,8 @@ set -e
 # quit
 # EOF
 
+# ssh root@192.168.1.13
+
 # curl -L https://raw.githubusercontent.com/bengtbengtsson/nixos/main/install-nixos.sh -o install-nixos.sh
 # chmod +x install-nixos.sh
 # bash install-nixos.sh
