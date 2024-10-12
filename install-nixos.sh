@@ -87,3 +87,9 @@ echo "Installation complete. Check your system and then reboot"
 # Reboot the system
 #echo "Installation complete. Rebooting system..."
 #reboot
+
+# login root
+# passwd ben
+# logout
+# login as ben
+# startx
