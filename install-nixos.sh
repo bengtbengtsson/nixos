@@ -4,27 +4,27 @@
 set -e
 
 # Load Swedish keyboard layout and set terminal font
-sudo loadkeys sv-latin1
-sudo setfont ter-v32n
+# sudo loadkeys sv-latin1
+# sudo setfont ter-v32n
 
 # Set the root password
-echo "Setting root password..."
-passwd root
+# echo "Setting root password..."
+# passwd root
 
 # Start wpa_supplicant to configure WiFi
-echo "Starting wpa_supplicant service..."
-systemctl start wpa_supplicant
+# echo "Starting wpa_supplicant service..."
+# systemctl start wpa_supplicant
 
 # Pause for user input to configure WiFi using wpa_cli
-echo "Now configuring WiFi with wpa_cli..."
-wpa_cli <<EOF
-add_network
-set_network 0 ssid "Bengtsson"
-set_network 0 psk "<password>"  # Replace <password> with your WiFi password
-enable_network 0
-save_config
-quit
-EOF
+#echo "Now configuring WiFi with wpa_cli..."
+# wpa_cli <<EOF
+# add_network
+# set_network 0 ssid "Bengtsson"
+# set_network 0 psk "<password>"  # Replace <password> with your WiFi password
+# enable_network 0
+# save_config
+# quit
+# EOF
 
 # Verify internet connection
 echo "Pinging google.com to verify network connection..."
