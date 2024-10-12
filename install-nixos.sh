@@ -26,6 +26,10 @@ set -e
 # quit
 # EOF
 
+# curl -L https://raw.githubusercontent.com/bengtbengtsson/nixos/main/install-nixos.sh -o install-nixos.sh
+# chmod +x install-nixos.sh
+# bash install-nixos.sh
+
 # Verify internet connection
 echo "Pinging google.com to verify network connection..."
 ping -c 3 google.com
