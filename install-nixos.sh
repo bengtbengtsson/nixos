@@ -72,6 +72,8 @@ git clone https://github.com/bengtbengtsson/nixos /mnt/etc/nixos/
 echo "Installing NixOS..."
 nixos-install
 
+# Done!
+echo "Installation complete. Check your system and then reboot"
 # Reboot the system
-echo "Installation complete. Rebooting system..."
-reboot
+#echo "Installation complete. Rebooting system..."
+#reboot
