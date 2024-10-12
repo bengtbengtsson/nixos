@@ -14,12 +14,14 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/b8acc24f-b0d3-4854-aae3-82b8d4cd65ac";
+    { device = "/dev/disk/by-label/nixos";
       fsType = "ext4";
     };
 
+  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-partlabel/cryptic";
+
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/E86B-3D5B";
+    { device = "/dev/disk/by-label/boot";
       fsType = "vfat";
       options = [ "fmask=0022" "dmask=0022" ];
     };
