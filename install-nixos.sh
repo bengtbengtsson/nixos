@@ -66,7 +66,8 @@ nixos-generate-config --root /mnt
 
 # Replace the configuration files with those from your GitHub repository
 echo "Cloning configuration files from GitHub..."
-git clone https://github.com/bengtbengtsson/nixos /mnt/etc/nixos/
+curl -L https://raw.githubusercontent.com/bengtbengtsson/nixos/main/configuration.nix -o /mnt/etc/nixos/configuration.nix
+curl -L https://raw.githubusercontent.com/bengtbengtsson/nixos/main/hardware-configuration.nix -o /mnt/etc/nixos/hardware-configuration.nix
 
 # Install NixOS
 echo "Installing NixOS..."
